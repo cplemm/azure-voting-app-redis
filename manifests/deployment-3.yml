@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "chaosaks-f0ac"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "chaosaks-f0ac"
+  template:
+    metadata:
+      labels:
+        app: "chaosaks-f0ac"
+    spec:
+      containers:
+        - name: "chaosaks-f0ac"
+          image: "clemm.azurecr.io/chaosaks"
+          ports:
+          - containerPort: 80

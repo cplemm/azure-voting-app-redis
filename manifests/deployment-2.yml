@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aks-c183"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aks-c183"
+  template:
+    metadata:
+      labels:
+        app: "aks-c183"
+    spec:
+      containers:
+        - name: "aks-c183"
+          image: "clemm.azurecr.io/aks"
+          ports:
+          - containerPort: 80

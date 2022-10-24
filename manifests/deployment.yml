@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "aks-d9bb"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "aks-d9bb"
+  template:
+    metadata:
+      labels:
+        app: "aks-d9bb"
+    spec:
+      containers:
+        - name: "aks-d9bb"
+          image: "clemm.azurecr.io/aks"
+          ports:
+          - containerPort: 80
